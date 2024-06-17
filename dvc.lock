@@ -1,0 +1,58 @@
+schema: '2.0'
+stages:
+  training:
+    cmd: python main.py
+    deps:
+    - path: src/components/data_ingestion.py
+      hash: md5
+      md5: cd14ce38bbfa4a4d06141372b956a705
+      size: 1141
+    - path: src/components/data_transformation.py
+      hash: md5
+      md5: 77e6fd251a2542849545d9d2774c688f
+      size: 4908
+    - path: src/components/model_evaluation.py
+      hash: md5
+      md5: 7cc0aada4fe730e816baece71b55e6a9
+      size: 3070
+    - path: src/components/model_trainer.py
+      hash: md5
+      md5: edf7387f4ce3e3860d68c0f25b5f7ae2
+      size: 4744
+    - path: src/pipeline/training_pipeline.py
+      hash: md5
+      md5: 10229de1dcb0cab7b1015d3ca2aa1206
+      size: 2853
+    outs:
+    - path: artifacts/DataIngestionArtifacts/data.csv
+      hash: md5
+      md5: abbd67096da74f521aac39e55eb04445
+      size: 11900280
+    - path: artifacts/DataTransformationArtifacts/preprocessor.joblib
+      hash: md5
+      md5: e8a52b5a8dd7b37d96413d01b8dcdb13
+      size: 5112
+    - path: artifacts/DataTransformationArtifacts/x_test.csv
+      hash: md5
+      md5: 034df44fcc957bd4905a4bdf326339be
+      size: 7085573
+    - path: artifacts/DataTransformationArtifacts/x_train.csv
+      hash: md5
+      md5: eebacb36db296c5376fbbec91377c657
+      size: 28427623
+    - path: artifacts/DataTransformationArtifacts/y_test.npy
+      hash: md5
+      md5: 41bcadc4423d0b73b8eef1960b8bb123
+      size: 309848
+    - path: artifacts/DataTransformationArtifacts/y_train.npy
+      hash: md5
+      md5: b8cfa39a433f1be7d29a5975ba2f1a6d
+      size: 1238992
+    - path: artifacts/ModelTrainerArtifacts/metrics.txt
+      hash: md5
+      md5: 8a0227d40a6e553a80a0425dc2510646
+      size: 435
+    - path: artifacts/ModelTrainerArtifacts/model.pkl
+      hash: md5
+      md5: 78198e656521da10a30a6482d13d133f
+      size: 868

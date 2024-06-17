@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/MLOps/ML_Project/mlruns/154691827600404845/f385d911967a44ccb7c093d0ca2476c3/artifacts
+end_time: 1718621466673
+entry_point_name: ''
+experiment_id: '154691827600404845'
+lifecycle_stage: active
+run_id: f385d911967a44ccb7c093d0ca2476c3
+run_name: gifted-croc-970
+run_uuid: f385d911967a44ccb7c093d0ca2476c3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718621366694
+status: 3
+tags: []
+user_id: hp

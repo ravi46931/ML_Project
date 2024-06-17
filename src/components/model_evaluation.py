@@ -1,5 +1,6 @@
 import os
 import sys
+import dagshub
 import mlflow
 import mlflow.sklearn
 from mlflow.models import infer_signature
@@ -17,9 +18,6 @@ class ModelEvaluation:
     def __init__(self, data_transformation_artifacts: DataTransformationArtifacts, model_trainer_artifacts: ModelTrainerArtifacts):
         self.data_transformation_artifacts = data_transformation_artifacts
         self.model_trainer_artifacts = model_trainer_artifacts
-        # self.rmse = None
-        # self.mae = None
-        # self.r2 = None
 
     def eval_metrics(self, actual, pred):
         try:
@@ -45,9 +43,10 @@ class ModelEvaluation:
 
             params = model.get_params()
 
-            mlflow.set_experiment("Model Evaluation")
+            # Comment this line to track the experiment locally (mlruns folder created)
+            # dagshub.init(repo_owner='ravikumar46931', repo_name='ML_Project', mlflow=True)
 
-            # tracking_url_type_store=urlparse(mlflow.get_tracking_uri()).scheme
+            mlflow.set_experiment("Model Evaluation")
 
             with mlflow.start_run():
 
@@ -60,7 +59,7 @@ class ModelEvaluation:
                 mlflow.log_metric("mae", mae)
 
                 # Set a tag that we can use to remind ourselves what this run was for
-                mlflow.set_tag("Evaluation Info", "Basic LR model for iris data")
+                mlflow.set_tag("Evaluation Info", "This has model evaluation")
 
                 # Infer the model signature
                 signature = infer_signature(X_test, model.predict(X_test))
@@ -68,21 +67,11 @@ class ModelEvaluation:
                 # Log the model
                 model_info = mlflow.sklearn.log_model(
                     sk_model=model,
-                    artifact_path="sklearn_model",
+                    artifact_path="ml_model",
                     signature=signature,
-                    input_example=X_test,
+                    input_example=X_test.iloc[[0]],
                     registered_model_name="best_model",
                 )
-                #  # Model registry does not work with file store
-                # if tracking_url_type_store != "file":
-
-                #     # Register the model
-                #     # There are other ways to use the Model Registry, which depends on the use case,
-                #     # please refer to the doc for more information:
-                #     # https://mlflow.org/docs/latest/model-registry.html#api-workflow
-                #     mlflow.sklearn.log_model(model, "model", registered_model_name="ml_model")
-                # else:
-                #     mlflow.sklearn.log_model(model, "model")
 
         except Exception as e:
             raise CustomException(e, sys)

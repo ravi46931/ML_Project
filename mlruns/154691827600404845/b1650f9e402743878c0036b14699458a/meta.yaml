@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/MLOps/ML_Project/mlruns/154691827600404845/b1650f9e402743878c0036b14699458a/artifacts
+end_time: 1718639964067
+entry_point_name: ''
+experiment_id: '154691827600404845'
+lifecycle_stage: active
+run_id: b1650f9e402743878c0036b14699458a
+run_name: puzzled-shad-470
+run_uuid: b1650f9e402743878c0036b14699458a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718639895233
+status: 3
+tags: []
+user_id: hp

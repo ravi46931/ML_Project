@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/MLOps/ML_Project/mlruns/154691827600404845/f2ccf7aa4d41492eb6d738046529ab35/artifacts
+end_time: 1718642245758
+entry_point_name: ''
+experiment_id: '154691827600404845'
+lifecycle_stage: active
+run_id: f2ccf7aa4d41492eb6d738046529ab35
+run_name: burly-lark-745
+run_uuid: f2ccf7aa4d41492eb6d738046529ab35
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718642188928
+status: 3
+tags: []
+user_id: hp

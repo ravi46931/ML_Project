@@ -1,0 +1,19 @@
+stages:
+  training:
+    cmd: python main.py
+    deps:
+      - src/pipeline/training_pipeline.py
+      - src/components/data_ingestion.py
+      - src/components/data_transformation.py
+      - src/components/model_trainer.py
+      - src/components/model_evaluation.py
+
+    outs:
+      - artifacts/DataIngestionArtifacts/data.csv
+      - artifacts/DataTransformationArtifacts/x_train.csv
+      - artifacts/DataTransformationArtifacts/x_test.csv
+      - artifacts/DataTransformationArtifacts/y_train.npy
+      - artifacts/DataTransformationArtifacts/y_test.npy
+      - artifacts/DataTransformationArtifacts/preprocessor.joblib
+      - artifacts/ModelTrainerArtifacts/metrics.txt
+      - artifacts/ModelTrainerArtifacts/model.pkl

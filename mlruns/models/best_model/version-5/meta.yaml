@@ -1,0 +1,12 @@
+creation_timestamp: 1718639963818
+current_stage: None
+description: null
+last_updated_timestamp: 1718639963818
+name: best_model
+run_id: b1650f9e402743878c0036b14699458a
+run_link: null
+source: file:///E:/MLOps/ML_Project/mlruns/154691827600404845/b1650f9e402743878c0036b14699458a/artifacts/ml_model
+status: READY
+status_message: null
+user_id: null
+version: 5
