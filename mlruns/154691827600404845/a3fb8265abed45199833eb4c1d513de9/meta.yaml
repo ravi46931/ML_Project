@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/MLOps/ML_Project/mlruns/154691827600404845/a3fb8265abed45199833eb4c1d513de9/artifacts
+end_time: 1718615188013
+entry_point_name: ''
+experiment_id: '154691827600404845'
+lifecycle_stage: active
+run_id: a3fb8265abed45199833eb4c1d513de9
+run_name: lyrical-frog-934
+run_uuid: a3fb8265abed45199833eb4c1d513de9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718615076109
+status: 3
+tags: []
+user_id: hp

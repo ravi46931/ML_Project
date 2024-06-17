@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .dictionary-item {
+        border-bottom: 1px solid #ccc;
+        padding: 15px 0;
+    }
+
+    .key {
+        font-weight: bold;
+        color: #4CAF50;
+    }
+
+    .value {
+        margin-left: 10px;
+    }
+    .predict {
+        justify-content: center;
+        display: flex;
+    }
+    .predict span {
+        font-size: large;
+        margin: 23px;
+    }
+    .button {
+            background-color: #5ed8ce;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            color: white;
+        }
+        .btn {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+</style>
+</head>
+<body>
+    <!-- <h1>Input Values are</h1>
+    {{input_values}} -->
+
+    <div class="container">
+        <h2>Input Values</h2>
+        <div id="dictionary-values">
+            {% for key, value in input_values.items() %}
+            <div class="dictionary-item">
+                <span class="key">{{ key }}:</span>
+                <span class="value">{{ value }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% if prediction %}
+    <div class="predict">
+<h2>Predicted value: </h2> <span>{{ prediction }}</span>
+{% endif %}
+</div>
+
+<div class="btn">
+    <a href="/"> 
+        <button class="button">Go Back</button>
+    </a>
+</div>
+
+</body>
+</html>
+
+
